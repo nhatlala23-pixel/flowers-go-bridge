@@ -886,9 +886,9 @@ body {
 
 .qr-frame-wrapper {
     position: relative;
-    width: 180px;
-    height: 180px;
-    padding: 10px;
+    width: 210px;
+    height: 210px;
+    padding: 8px;
     border-radius: 20px;
     border: 2px solid #ffd2dc;
     background: #ffffff;
@@ -911,18 +911,18 @@ body {
     opacity: 1;
 }
 
-/* Center Logo on QR code (Overlay) */
+/* Center Logo on QR code (Overlay) — kept small to stay within 30% H error-correction tolerance */
 .qr-logo-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 44px;
-    height: 44px;
+    width: 34px;
+    height: 34px;
     background: #ffffff;
-    border-radius: 9px;
-    padding: 2.5px;
-    box-shadow: 0 3px 8px rgba(255, 77, 122, 0.15);
+    border-radius: 7px;
+    padding: 2px;
+    box-shadow: 0 2px 6px rgba(255, 77, 122, 0.15);
     z-index: 3;
     display: flex;
     justify-content: center;

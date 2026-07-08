@@ -117,7 +117,7 @@ window.addEventListener('blur', clearRedirectTimer);
 function generateDesktopQR() {
     // Generate QR using public API (qrserver.com) pointing to current page url
     const currentUrl = window.location.href;
-    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(currentUrl)}&color=090714&margin=0`;
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(currentUrl)}&color=090714&margin=8&ecc=H`;
     
     qrCodeImg.src = qrApiUrl;
     
