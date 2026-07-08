@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers Go - Mở ứng dụng</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon (using logo fallback) -->
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <!-- Background Animated Gradient Elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="container">
+        <main class="card">
+            <!-- App Identity Header -->
+            <div class="app-identity">
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="Flowers Go Logo" id="app-logo" class="logo">
+                    <div class="logo-ring"></div>
+                </div>
+                <h1 class="app-title">Flowers Go</h1>
+                <p class="app-tagline">Ứng dụng mua hoa trực tuyến</p>
+            </div>
+
+            <!-- Dynamic Interface States -->
+            <div class="status-container">
+                <!-- 1. CHECKING STATE (Initial Loading) -->
+                <div id="state-checking" class="state-view active">
+                    <div class="spinner-wrapper">
+                        <div class="spinner"></div>
+                    </div>
+                    <p class="status-text animate-pulse">Đang kiểm tra thiết bị...</p>
+                </div>
+
+                <!-- 2. ANDROID STATE -->
+                <div id="state-android" class="state-view">
+                    <!-- Subsection: Trying to open app -->
+                    <div id="android-redirecting" class="android-substate active">
+                        <div class="spinner-wrapper">
+                            <div class="spinner-accent"></div>
+                        </div>
+                        <p class="status-text">Đang mở ứng dụng Flowers Go...</p>
+                        <p class="sub-text">Hệ thống đang điều hướng bạn đến màn hình Đăng nhập.</p>
+                    </div>
+                    
+                    <!-- Subsection: Fallback download APK -->
+                    <div id="android-download" class="android-substate">
+                        <div class="icon-illustration error-shake">
+                            <svg class="illustration-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 17V9M12 17l-4-4M12 17l4-4"></path>
+                                <path d="M20.39 15.39A8 8 0 1 0 12 3a8 8 0 0 0-8 8.4A4 4 0 0 0 2 15a4 4 0 0 0 4 4h13a4.39 4.39 0 0 0 4.39-4.39c0-1.8-1.2-3.4-3-4.22z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="state-title">Không thể mở ứng dụng?</h2>
+                        <p class="sub-text">Có vẻ như ứng dụng chưa được cài đặt trên thiết bị của bạn.</p>
+                        
+                        <div class="action-buttons">
+                            <a href="#" id="btn-download-apk" class="btn btn-primary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>Tải ứng dụng (APK)</span>
+                            </a>
+                            <button id="btn-retry-open" class="btn btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                                </svg>
+                                <span>Thử mở lại</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. IOS STATE (iPhone / iPad) -->
+                <div id="state-ios" class="state-view">
+                    <div class="icon-illustration ios-badge">
+                        <svg class="illustration-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 18H12.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M10 6H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="state-title">Chỉ hỗ trợ Android</h2>
+                    <p class="sub-text">Ứng dụng Flowers Go hiện chỉ hỗ trợ hệ điều hành Android. Phiên bản dành cho iOS đang được phát triển.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="https://m.me/flowersgo" id="btn-contact-dev" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <span>Liên hệ nhà phát triển</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. DESKTOP STATE -->
+                <div id="state-desktop" class="state-view">
+                    <div class="qr-container">
+                        <div class="qr-frame">
+                            <img id="qr-code-img" src="" alt="Mã QR" class="qr-code">
+                            <div class="qr-loading-placeholder">
+                                <div class="spinner-accent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="state-title">Quét mã bằng điện thoại</h2>
+                    <p class="sub-text">Vui lòng sử dụng điện thoại <strong>Android</strong> để quét mã QR bên trên để mở ứng dụng hoặc tải APK trực tiếp.</p>
+                    
+                    <div class="desktop-tips">
+                        <div class="tip-item">
+                            <span class="tip-number">1</span>
+                            <span>Mở camera hoặc ứng dụng quét mã QR</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">2</span>
+                            <span>Quét mã và truy cập liên kết</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">3</span>
+                            <span>Hệ thống tự động mở hoặc tải ứng dụng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Premium Footer -->
+        <footer class="footer">
+            <p>© 2026 Flowers Go. Mọi quyền được bảo lưu.</p>
+        </footer>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
