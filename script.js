@@ -5,7 +5,7 @@
 
 // --- CONFIGURATION ---
 const DEEP_LINK_URL = 'flowersgo://login';
-const APK_DOWNLOAD_URL = '#'; // Cấu hình đường dẫn file APK của bạn ở đây
+const APK_DOWNLOAD_URL = './app-debug.apk'; // Đường dẫn file APK chạy trên website của bạn
 const DEV_CONTACT_URL = 'https://m.me/flowersgo'; // Cấu hình link liên hệ nhà phát triển ở đây
 const REDIRECT_TIMEOUT = 1500; // Thời gian chờ trước khi hiện nút tải (ms)
 const TRANSITION_DELAY = 800; // Thời gian hiển thị loading "kiểm tra thiết bị" (ms)
