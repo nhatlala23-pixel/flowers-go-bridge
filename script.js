@@ -58,6 +58,13 @@ function switchState(targetStateView) {
         view.classList.remove('active');
     });
     
+    // Add/remove desktop class on body for responsive styling
+    if (targetStateView === stateDesktop) {
+        document.body.classList.add('desktop-mode');
+    } else {
+        document.body.classList.remove('desktop-mode');
+    }
+    
     // Show target view with a slight delay for smooth transition
     setTimeout(() => {
         targetStateView.classList.add('active');
@@ -120,6 +127,13 @@ function generateDesktopQR() {
             qrPlaceholder.style.display = 'none';
         }
     };
+
+    // Populate direct link text and href dynamically
+    const desktopDirectLink = document.getElementById('desktop-direct-link');
+    if (desktopDirectLink) {
+        desktopDirectLink.href = currentUrl;
+        desktopDirectLink.textContent = currentUrl;
+    }
 }
 
 // --- EVENT LISTENERS ---
